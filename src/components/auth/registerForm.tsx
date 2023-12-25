@@ -19,6 +19,12 @@ export default function RegisterForm() {
         }
     )
 
+    function generateUserId(displayName: string) {
+        const cleanedName = displayName.replace(/\W/g, '');
+
+        form.setValue("username", cleanedName + Math.random().toString(36).substring(2, 8))
+    }
+
     function onSubmit(data: z.infer<typeof registerFormSchema>) {
         console.log(data)
     }
@@ -32,7 +38,7 @@ export default function RegisterForm() {
                     render={({ field }) => (
                         <FormItem >
                             <FormLabel>Display Name</FormLabel>
-                            <FormControl>
+                            <FormControl onBlur={() => generateUserId(field.value)}>
                                 <Input placeholder="Display name" {...field} />
                             </FormControl>
                             <FormDescription>Your public persona</FormDescription>
@@ -47,7 +53,7 @@ export default function RegisterForm() {
                         <FormItem >
                             <FormLabel>UserId</FormLabel>
                             <FormControl>
-                                <Input placeholder="Username" {...field} />
+                                <Input placeholder="Username"  {...field} />
                             </FormControl>
                             <FormDescription>Unique handle for access</FormDescription>
                             <FormMessage />
@@ -69,6 +75,6 @@ export default function RegisterForm() {
                 />
                 <Button type="submit" className="place-self-end ">Submit</Button>
             </form>
-        </Form>
+        </Form >
     )
 }
