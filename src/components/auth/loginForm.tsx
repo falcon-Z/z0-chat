@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "../ui/form"
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription } from "../ui/form"
 import { Input } from "../ui/input"
 import { z } from "zod"
 import { loginSchema } from "@falcon-z/schemas/forms/auth/loginFormSchema"
@@ -31,10 +31,11 @@ export default function LoginForm() {
                     name="username"
                     render={({ field }) => (
                         <FormItem >
-                            <FormLabel>Username</FormLabel>
+                            <FormLabel>UserId</FormLabel>
                             <FormControl>
                                 <Input placeholder="Username" {...field} />
                             </FormControl>
+                            <FormDescription>Unique handle for access</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}

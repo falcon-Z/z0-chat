@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "../ui/form"
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription } from "../ui/form"
 import { Input } from "../ui/input"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -35,6 +35,7 @@ export default function RegisterForm() {
                             <FormControl>
                                 <Input placeholder="Display name" {...field} />
                             </FormControl>
+                            <FormDescription>Your public persona</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -44,10 +45,11 @@ export default function RegisterForm() {
                     name="username"
                     render={({ field }) => (
                         <FormItem >
-                            <FormLabel>Username</FormLabel>
+                            <FormLabel>UserId</FormLabel>
                             <FormControl>
                                 <Input placeholder="Username" {...field} />
                             </FormControl>
+                            <FormDescription>Unique handle for access</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
