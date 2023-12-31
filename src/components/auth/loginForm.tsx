@@ -33,7 +33,7 @@ export default function LoginForm() {
                         <FormItem >
                             <FormLabel>UserId</FormLabel>
                             <FormControl>
-                                <Input placeholder="Username" {...field} />
+                                <Input {...field} />
                             </FormControl>
                             <FormDescription>Unique handle for access</FormDescription>
                             <FormMessage />
@@ -47,7 +47,7 @@ export default function LoginForm() {
                         <FormItem >
                             <FormLabel >Password</FormLabel>
                             <FormControl >
-                                <Input type="password" placeholder="Password" {...field} />
+                                <Input type="password"  {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
